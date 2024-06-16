@@ -12,30 +12,7 @@ Este é um projeto básico desenvolvido para exercitar conceitos de programaçã
 
 ## Estrutura do Projeto
 
-solution
-│
-├── Entidades/
-│   └── Client.cs
-│
-├── Json/
-│   └── Client.txt
-│
-├── Repositorio/
-│   ├── ClienteRepositorio/
-│   │   └── ClienteRepositorio.cs
-│   │
-│   └── DatabaseContext/
-│       └── ClienteDbContext.cs
-│
-├── Services/
-│   └── ServiceProvider.cs
-│
-├── UseCase/
-│   └── Menu/
-│       └── MenuUseCase.cs
-│
-└── Util/
-    └── Validacoes.cs
+<img src="../img/ArquiteturaDoProjeto.png">
 
     
 ## Funcionalidades
