@@ -56,12 +56,7 @@ namespace AppCliente_R.Repositorios.ClienteRepositorio
             Console.Write(Environment.NewLine);
 
             Console.Write("Informe o desconto (0 - 50): ");
-            var desconto = 0M;
-            while (!decimal.TryParse(Console.ReadLine(), out desconto) || desconto < 0 || desconto > 50)
-            {
-                Console.Write("Formato de desconto inválido!" +
-                              "\nInforme o desconto (0 - 50): ");
-            }
+            var desconto = _validar.ValidarDesconto();
             Console.Write(Environment.NewLine);
 
             var novoCliente = new Clientes()
@@ -102,16 +97,7 @@ namespace AppCliente_R.Repositorios.ClienteRepositorio
         }
         public void EditarCliente()
         {
-            Console.Write("\nInforme o ID do cliente a ser editado: ");
-            var id = Convert.ToInt32(Console.ReadLine());
-            var cliente = _context.CLIENTE.FirstOrDefault(c => c.ID == id);
-
-            if (cliente == null)
-            {
-                Console.WriteLine("Não foi localizado nenhum cliente com o ID informado !");
-                return;
-            }
-
+            var cliente = BuscarClientePorID();
             var continuar = "n";
             int opcao = 0;
             do
@@ -145,12 +131,7 @@ namespace AppCliente_R.Repositorios.ClienteRepositorio
 
                     case 2:
                         Console.Write("Informe o desconto: ");
-                        var desc = 0M;
-                        while (!decimal.TryParse(Console.ReadLine(), out desc) || desc < 0 || desc > 50)
-                        {
-                            Console.Write("Formato de desconto inválido!" +
-                                          "\nInforme o desconto (0 - 50): ");
-                        }
+                        var desc = _validar.ValidarDesconto();
                         cliente.DESCONTO = desc;
                         break;
 
@@ -216,18 +197,7 @@ namespace AppCliente_R.Repositorios.ClienteRepositorio
 
         public void ExcluirCliente()
         {
-            Console.Write("\nInforme o ID do cliente a ser excluido: ");
-            var id = Convert.ToInt32(Console.ReadLine());
-
-            var cliente = _context.CLIENTE.FirstOrDefault(c => c.ID == id);
-
-            if (cliente == null)
-            {
-                Console.WriteLine("Não foi localizado nenhum cliente com o ID informado! [Enter]");
-                Console.ReadKey();
-                return;
-            }
-
+            var cliente = BuscarClientePorID();
             var opcao = "n";
 
             ExibirCliente(cliente);
@@ -255,6 +225,27 @@ namespace AppCliente_R.Repositorios.ClienteRepositorio
             var json = System.Text.Json.JsonSerializer.Serialize(clientes, jsonOptions);
 
             File.WriteAllText("C:\\Users\\willi\\OneDrive\\Ambiente de Trabalho\\Mentoria NET\\AppCliente-R\\Json\\Cliente.txt", json);
+        }
+
+        public Clientes BuscarClientePorID()
+        {
+            Console.Write("\nInforme o ID do cliente:  ");
+            var id = 0;
+            while (!int.TryParse(Console.ReadLine(), out id))
+            {
+                Console.Write("Formato do id inválido! o ID deve ser um número inteiro" +
+                                  "\nInforme o Id do cliente: ");
+            }
+
+            var cliente = _context.CLIENTE.FirstOrDefault(c => c.ID == id);
+
+            if (cliente == null)
+            {
+                Console.WriteLine("Não foi localizado nenhum cliente com o ID informado! [Enter]");
+                Console.ReadKey();
+                return null;
+            }
+            return cliente;
         }
     }
 }
