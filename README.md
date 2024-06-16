@@ -12,7 +12,9 @@ Este é um projeto básico desenvolvido para exercitar conceitos de programaçã
 
 ## Estrutura do Projeto
 
-<img src="../img/ArquiteturaDoProjeto.png">
+<div text-aling: "Center";>
+  <img src="img/ArquiteturaDoProjeto.png">
+</div>
 
     
 ## Funcionalidades
