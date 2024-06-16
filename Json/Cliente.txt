@@ -1,0 +1,47 @@
+[
+  {
+    "ID": 1,
+    "NOME": "William Ribeiro da Silva",
+    "DATANASCIMENTO": "2003-03-14T00:00:00",
+    "DESCONTO": 50,
+    "EMAIL": "William.Ribeiro1403@gmail.com",
+    "TELEFONE": "(11) 99293-3374",
+    "DATACADASTRO": "2024-06-16T10:46:11.403516"
+  },
+  {
+    "ID": 2,
+    "NOME": "Nilma Vicente da Silva",
+    "DATANASCIMENTO": "1976-01-18T00:00:00",
+    "DESCONTO": 35,
+    "EMAIL": "Nilma.Vicente266@gmail.com",
+    "TELEFONE": "(11) 94572-9382",
+    "DATACADASTRO": "2024-06-16T10:47:15.546011"
+  },
+  {
+    "ID": 3,
+    "NOME": "Lilian Ribeiro da Silva",
+    "DATANASCIMENTO": "2001-11-05T00:00:00",
+    "DESCONTO": 35,
+    "EMAIL": "Lilian.Ribeiro@icloud.com",
+    "TELEFONE": "(11) 95759-3946",
+    "DATACADASTRO": "2024-06-16T10:49:19.114989"
+  },
+  {
+    "ID": 4,
+    "NOME": "Rafael Vicente da Silva",
+    "DATANASCIMENTO": "2010-04-15T00:00:00",
+    "DESCONTO": 25,
+    "EMAIL": "Rafael.Vicente@icloud.com",
+    "TELEFONE": "(11) 96330-8170",
+    "DATACADASTRO": "2024-06-16T10:50:32.296462"
+  },
+  {
+    "ID": 5,
+    "NOME": "Pablo Vicente da Costa",
+    "DATANASCIMENTO": "1998-06-18T00:00:00",
+    "DESCONTO": 15,
+    "EMAIL": "Pablo.Vicente@icloud.com",
+    "TELEFONE": "(11) 94587-8965",
+    "DATACADASTRO": "2024-06-16T11:15:42.030709"
+  }
+]
